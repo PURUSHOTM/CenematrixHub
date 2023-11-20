@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <title>CinematrixHub</title>
+    <style>
+      header {
+        background: linear-gradient(
+          to right,
+          #5b5e63,
+          #131f35
+        ); /* Adjust colors as needed */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Gradient dark background for the trailer section */
+      #trailer {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-100">
+    <!-- Header -->
+    <header class="text-white p-4 relative z-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-200">CinematrixHub</h1>
+          <!-- Your movie logo here -->
+        </div>
+        <div class="lg:hidden">
+          <!-- Mobile menu button -->
+          <button id="mobileMenuButton" class="text-white focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="hidden lg:flex space-x-4">
+          <!-- Navigation links go here -->
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#cast">Cast</a>
+          <a href="#trailers">Trailers</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <!-- Add more navigation links as needed -->
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 w-3/4 h-full bg-gray-800 p-8 transform translate-x-full overflow-y-auto transition-transform duration-300 ease-in-out z-50"
+    >
+      <!-- Close button for mobile menu -->
+      <button
+        id="closeMobileMenu"
+        class="text-white absolute top-4 right-4 focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <!-- Mobile navigation links go here -->
+      <a href="#home" class="block text-white py-2">Home</a>
+      <a href="#about" class="block text-white py-2">About</a>
+      <a href="#cast" class="block text-white py-2">Cast</a>
+      <a href="#trailers" class="block text-white py-2">Trailers</a>
+      <a href="#gallery" class="block text-white py-2">Gallery</a>
+      <a href="#reviews" class="block text-white py-2">Reviews</a>
+      <!-- Add more mobile navigation links as needed -->
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden">
+      <div class="swiper-container h-full">
+        <div class="swiper-wrapper h-full">
+          <!-- Slide 1 -->
+          <div class="swiper-slide h-full">
+            <img
+              src="/image/hero-image1.jpeg"
+              alt="Hero Image 1"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide h-full">
+            <img
+              src="hero-image2.jpg"
+              alt="Hero Image 2"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide h-full">
+            <img
+              src="hero-image3.jpg"
+              alt="Hero Image 3"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <!-- Add pagination and navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent to-black"
+      ></div>
+      <div
+        class="absolute inset-0 flex items-center justify-center text-white z-10"
+      >
+        <div class="text-center">
+          <h2 class="text-4xl font-bold mb-4">Discover the Epic Journey</h2>
+          <p class="text-lg">
+            Experience the thrill, the emotion, and the magic of our blockbuster
+            movie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <!-- <section id="overview" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+       
+        <div class="lg:w-1/2">
+            <h2 class="text-4xl font-bold mb-6">Experience the Epic Adventure</h2>
+            <p class="text-lg text-gray-300 mb-6">
+            Immerse yourself in a world of captivating storytelling, breathtaking visuals, and unforgettable characters. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <ul class="list-disc list-inside">
+            <li class="mb-2">Stunning cinematography that transports you to another dimension.</li>
+            <li class="mb-2">A gripping storyline filled with twists and turns.</li>
+            <li class="mb-2">Unforgettable characters portrayed by a talented cast.</li>
+            <li class="mb-2">Innovative visual effects that push the boundaries of filmmaking.</li>
+            </ul>
+        </div>
+        
+        
+        <div class="lg:w-1/2 mt-8 lg:mt-0">
+            <img src="overview-image.jpg" alt="Movie Overview" class="w-full h-full object-cover rounded-lg shadow-lg">
+        </div>
+        </div>
+    </section> -->
+
+    <!-- Genre Section -->
+    <section id="genre" class="py-8 bg-gray-800 text-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Explore by Genre</h2>
+
+        <!-- Genre cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Action genre card -->
+          <a
+            href="#action"
+            class="group relative bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full overflow-hidden p-8 transform transition-transform hover:scale-105 hover:shadow-xl"
+          >
+            <h3 class="text-lg font-bold text-white mb-2">Action</h3>
+            <p class="text-white">
+              Thrilling adventures and intense excitement.
+            </p>
+          </a>
+
+          <!-- Drama genre card -->
+          <a
+            href="#drama"
+            class="group relative bg-gradient-to-b from-green-400 to-blue-500 rounded-full overflow-hidden p-8 transform transition-transform hover:scale-105 hover:shadow-xl"
+          >
+            <h3 class="text-lg font-bold text-white mb-2">Drama</h3>
+            <p class="text-white">
+              Compelling stories that tug at the heartstrings.
+            </p>
+          </a>
+
+          <!-- Comedy genre card -->
+          <a
+            href="#comedy"
+            class="group relative bg-gradient-to-b from-yellow-400 to-orange-500 rounded-full overflow-hidden p-8 transform transition-transform hover:scale-105 hover:shadow-xl"
+          >
+            <h3 class="text-lg font-bold text-white mb-2">Comedy</h3>
+            <p class="text-white">Laughs and lighthearted entertainment.</p>
+          </a>
+
+          <!-- Sci-Fi genre card -->
+          <a
+            href="#sci-fi"
+            class="group relative bg-gradient-to-b from-pink-500 to-red-500 rounded-full overflow-hidden p-8 transform transition-transform hover:scale-105 hover:shadow-xl"
+          >
+            <h3 class="text-lg font-bold text-white mb-2">Sci-Fi</h3>
+            <p class="text-white">
+              Explore the wonders of the future and beyond.
+            </p>
+          </a>
+          <!-- Add more genre cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Trailer Section -->
+    <!-- <section id="trailer" class="py-8 bg-gray-800 text-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Official Trailer</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/your-trailer-id"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+        <div class="mt-6 p-4">
+          <h3 class="text-xl font-bold mb-2">About the Trailer</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at odio
+            id tellus scelerisque ultrices. Nullam volutpat, ligula a luctus
+            accumsan, quam justo eleifend metus, id condimentum odio felis vel
+            nisl.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Cast and Crew Section -->
+    <section id="cast-and-crew" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Meet the Cast and Crew</h2>
+
+        <!-- Cast and Crew Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Cast and Crew Card 1 -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <img
+              src="/cast and crew image/johny deep.jpeg"
+              alt="Actor 1"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold mb-2">Johny Deep</h3>
+            <p class="text-gray-300">Lead Actor</p>
+          </div>
+
+          <!-- Cast and Crew Card 2 -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <img
+              src="/cast and crew image/Leonardo DiCaprio.jpg"
+              alt="Actress 1"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold mb-2">Leonardo DiCaprio</h3>
+            <p class="text-gray-300">Lead Actor</p>
+          </div>
+
+          <!-- Cast and Crew Card 3 -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <img
+              src="/cast and crew image/Jennifer Lawrence.jpg"
+              alt="Director 1"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold mb-2">Jennifer Lawrence</h3>
+            <p class="text-gray-300">Actress</p>
+          </div>
+
+          <!-- Cast and Crew Card 4 -->
+          <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <img
+              src="/cast and crew image/tom cruise.jpeg"
+              alt="Producer 1"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold mb-2">Tom Cruise Y</h3>
+            <p class="text-gray-300">Lead Actor</p>
+          </div>
+
+          <!-- Add more Cast and Crew Cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Movies Section -->
+    <section id="popular-movies" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Popular Movies</h2>
+
+        <!-- Popular Movies Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Popular Movie Card 1 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/popular movies/nowwhere.jpg"
+              alt="Popular Movie 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Nowhere</h3>
+            </div>
+          </div>
+
+          <!-- Popular Movie Card 2 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/popular movies/The boss Baby.jpg"
+              alt="Popular Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">The Boss Baby</h3>
+            </div>
+          </div>
+          <!-- Popular Movie Card 3 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/popular movies/omg-2.jpg"
+              alt="Popular Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">OMG 2</h3>
+            </div>
+          </div>
+          <!-- Popular Movie Card 4 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/popular movies/jawan.jpg"
+              alt="Popular Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Jawan</h3>
+            </div>
+          </div>
+
+          <!-- Add more Popular Movie Cards as needed -->
+        </div>
+      </div>
+    </section>
+    <!-- Horror Movies Section -->
+    <section id="horror-movies" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Horror Movies</h2>
+
+        <!-- Horror Movies Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Horror Movie Card 1 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/horror movies/Evil Dead.jpg"
+              alt="Horror Movie 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Evil Dead</h3>
+            </div>
+          </div>
+
+          <!-- Horror Movie Card 2 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/horror movies/The 8th night.jpg"
+              alt="Horror Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">The 8th night</h3>
+            </div>
+          </div>
+          <!-- Horror Movie Card 3 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/horror movies/The pop's Exorcist.jpg"
+              alt="Horror Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">The Pop's Exorcist</h3>
+            </div>
+          </div>
+          <!-- Horror Movie Card 4 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/horror movies/The Ritual.jpg"
+              alt="Horror Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">The Ritual</h3>
+            </div>
+          </div>
+
+          <!-- Add more Horror Movie Cards as needed -->
+        </div>
+      </div>
+    </section>
+    <!-- Indian Movies Section -->
+    <section id="indian-movies" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Indian Movies</h2>
+
+        <!-- Indian Movies Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Indian Movie Card 1 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Indian-movies/PK.jpg"
+              alt="Indian Movie 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">PK</h3>
+            </div>
+          </div>
+
+          <!-- Indian Movie Card 2 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Indian-movies/RRR(HIndi).jpg"
+              alt="Indian Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">RRR(Hindi)</h3>
+            </div>
+          </div>
+          <!-- Indian Movie Card 3 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Indian-movies/Kantara(Hindi).jpg"
+              alt="Indian Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Kantara(Hindi)</h3>
+            </div>
+          </div>
+          <!-- Indian Movie Card 4 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Indian-movies/Taare Zameen Par.jpg"
+              alt="Indian Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Taree Zameen Par</h3>
+            </div>
+          </div>
+
+          <!-- Add more Indian Movie Cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Romantic Movies Section -->
+    <section id="romantic-movies" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Romantic Movies</h2>
+
+        <!-- Romantic Movies Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Romantic Movie Card 1 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Indian-movies/Fifty Shades Freed.jpg"
+              alt="Romantic Movie 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Fifty Shades Freed</h3>
+            </div>
+          </div>
+
+          <!-- Romantic Movie Card 2 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Romantic Movies/Kuch Kuch Hota Hai.jpg"
+              alt="Romantic Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Kuch Kuch Hota Hai</h3>
+            </div>
+          </div>
+          <!-- Romantic Movie Card 3 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Romantic Movies/Main Hoon Na.jpg"
+              alt="Romantic Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Main Hoon Na</h3>
+            </div>
+          </div>
+          <!-- Romantic Movie Card 4 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/Romantic Movies/Love at first sight.jpg"
+              alt="Romantic Movie 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Love at First Sight</h3>
+            </div>
+          </div>
+
+          <!-- Add more Romantic Movie Cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Family Comedies Section -->
+    <section id="family-comedies" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Family Comedies</h2>
+
+        <!-- Family Comedies Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Family Comedy Card 1 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/comedy/Playing with fire.jpg"
+              alt="Family Comedy 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Plaring With Fire</h3>
+            </div>
+          </div>
+
+          <!-- Family Comedy Card 2 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/comedy/Kathal - A Jackfruit Mystery.jpg"
+              alt="Family Comedy 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">
+                Kathal - A Jackfruit Mystery
+              </h3>
+            </div>
+          </div>
+          <!-- Family Comedy Card 3 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/comedy/Fukrey.jpg"
+              alt="Family Comedy 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Fukrey</h3>
+            </div>
+          </div>
+          <!-- Family Comedy Card 4 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/comedy/Red Notice.jpg"
+              alt="Family Comedy 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Red Notice</h3>
+            </div>
+          </div>
+
+          <!-- Add more Family Comedy Cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews and Ratings Section -->
+    <section id="reviews" class="bg-gray-800 text-black py-8 text-gray-300">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Reviews and Ratings</h2>
+
+        <!-- Review Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Review Card 1 -->
+          <div class="bg-gray-900 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2 text-gray-300">Mike</h3>
+            <p class="text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="mt-4 flex items-center">
+              <span class="text-yellow-500">★ ★ ★ ★ ★</span>
+            </div>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="bg-gray-900 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2 text-gray-300">John</h3>
+            <p class="text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="mt-4 flex items-center">
+              <span class="text-yellow-500">★ ★ ★ ★ ☆</span>
+            </div>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div class="bg-gray-900 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2 text-gray-300">David</h3>
+            <p class="text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="mt-4 flex items-center">
+              <span class="text-yellow-500">★ ★ ★ ☆ ☆</span>
+            </div>
+          </div>
+
+          <!-- Review Card 4 -->
+          <div class="bg-gray-900 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2 text-gray-300">Jenny</h3>
+            <p class="text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="mt-4 flex items-center">
+              <span class="text-yellow-500">★ ★ ☆ ☆ ☆</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect with Us Section -->
+    <section id="connect-with-us" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Connect with Us</h2>
+
+        <!-- Connect with Us Links -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Social Media Link 1 -->
+          <a
+            href="#"
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 block"
+          >
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Facebook</h3>
+              <p class="text-gray-300 group-hover:text-blue-500">
+                Join us on Facebook for the latest updates and discussions.
+              </p>
+            </div>
+          </a>
+
+          <!-- Social Media Link 2 -->
+          <a
+            href="#"
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 block"
+          >
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Twitter</h3>
+              <p class="text-gray-300 group-hover:text-blue-500">
+                Follow us on Twitter for real-time news and conversations.
+              </p>
+            </div>
+          </a>
+
+          <!-- Contact Us Link -->
+          <a
+            href="#"
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 block"
+          >
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Contact Us</h3>
+              <p class="text-gray-300 group-hover:text-blue-500">
+                Have questions or feedback? Reach out to us directly.
+              </p>
+            </div>
+          </a>
+
+          <!-- Newsletter Link -->
+          <a
+            href="#"
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 block"
+          >
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Newsletter</h3>
+              <p class="text-gray-300 group-hover:text-blue-500">
+                Subscribe to our newsletter for exclusive updates and offers.
+              </p>
+            </div>
+          </a>
+
+          <!-- Add more Connect with Us Links as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- News and Updates Section -->
+    <section id="news-updates" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Latest News and Updates</h2>
+
+        <!-- News and Updates Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- News Card 1 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/news/deadpool3.jpeg"
+              alt="News Image 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Exciting Announcement</h3>
+              <p class="text-gray-300">
+                We are thrilled to share a major announcement about the movie.
+                Stay tuned for more details and surprises!
+              </p>
+              <a href="#" class="text-blue-500 mt-4 inline-block">Read More</a>
+            </div>
+          </div>
+
+          <!-- News Card 2 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/news/behindthescene.jpg"
+              alt="News Image 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Behind the Scenes</h3>
+              <p class="text-gray-300">
+                Get an exclusive look behind the scenes of the movie production.
+                Discover the magic that brings the story to life.
+              </p>
+              <a href="#" class="text-blue-500 mt-4 inline-block">Explore</a>
+            </div>
+          </div>
+
+          <!-- News Card 3 -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/news/neil Blomkamp.jpg"
+              alt="News Image 3"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Exclusive Interviews</h3>
+              <p class="text-gray-300">
+                Neill Blomkamp on Making a Return to Hollywood.
+              </p>
+              <a href="#" class="text-blue-500 mt-4 inline-block">Interviews</a>
+            </div>
+          </div>
+
+          <!-- Add more News and Updates Cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Merchandise and Tickets Section -->
+    <section id="merchandise-tickets" class="bg-gray-800 text-white py-16">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-8">
+          Get Your Merchandise and Tickets
+        </h2>
+
+        <!-- Merchandise and Tickets Content -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Merchandise Card -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/merchandise/jawan.webp"
+              alt="Merchandise"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">
+                Official Movie Merchandise
+              </h3>
+              <p class="text-gray-300">
+                Explore our exclusive merchandise collection. Show your love for
+                the movie with stylish apparel and accessories.
+              </p>
+              <a href="#" class="text-blue-500 mt-4 inline-block">Shop Now</a>
+            </div>
+          </div>
+
+          <!-- Tickets Card -->
+          <div
+            class="group bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105"
+          >
+            <img
+              src="/merchandise/ticket.jpg"
+              alt="Movie Tickets"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Book Your Tickets</h3>
+              <p class="text-gray-300">
+                Don't miss the chance to experience the movie on the big screen.
+                Book your tickets now and enjoy the show!
+              </p>
+              <a href="#" class="text-blue-500 mt-4 inline-block"
+                >Book Tickets</a
+              >
+            </div>
+          </div>
+
+          <!-- Add more Merchandise and Tickets Cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact/Support Section -->
+    <section id="contact-support" class="py-16 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Contact and Support</h2>
+
+        <!-- Contact Information -->
+        <div
+          class="flex flex-col md:flex-row justify-center items-center bg-white p-6 rounded-lg shadow-md"
+        >
+          <div class="mb-4 md:mr-8">
+            <h3 class="text-2xl font-semibold mb-2">Need Assistance?</h3>
+            <p class="text-gray-700">Our support team is here to help you.</p>
+          </div>
+
+          <!-- Contact Form or Information -->
+          <div>
+            <!-- Replace the following with your actual contact form or information -->
+            <p class="text-gray-700 mb-2">
+              <strong>Email:</strong> support@example.com
+            </p>
+            <p class="text-gray-700 mb-2">
+              <strong>Phone:</strong> +1 (555) 123-4567
+            </p>
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition duration-300 transform hover:scale-105"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Navigation Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Navigation</h3>
+            <ul class="list-none p-0">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Cast</a></li>
+              <li><a href="#">Trailers</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Connect with Us</h3>
+            <ul class="list-none p-0">
+              <li>
+                <a href="#" class="flex items-center"
+                  ><i class="fab fa-facebook mr-2"></i>Facebook</a
+                >
+              </li>
+              <li>
+                <a href="#" class="flex items-center"
+                  ><i class="fab fa-twitter mr-2"></i>Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="flex items-center"
+                  ><i class="fab fa-instagram mr-2"></i>Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Customer Support Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Support</h3>
+            <ul class="list-none p-0">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Additional Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">More</h3>
+            <ul class="list-none p-0">
+              <li><a href="#">Merchandise</a></li>
+              <li><a href="#">Tickets</a></li>
+              <li><a href="#">News & Updates</a></li>
+              <li><a href="#">Related Movies</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright and Terms -->
+        <div class="mt-8 text-center text-gray-500">
+          <p>&copy; 2023 Your Movie Name. All rights reserved.</p>
+          <p>Terms of Use | Privacy Policy</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Initialize Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+
+    <script>
+      document
+        .getElementById("mobileMenuButton")
+        .addEventListener("click", function () {
+          document
+            .getElementById("mobileMenu")
+            .classList.toggle("translate-x-0");
+        });
+
+      document
+        .getElementById("closeMobileMenu")
+        .addEventListener("click", function () {
+          document
+            .getElementById("mobileMenu")
+            .classList.remove("translate-x-0");
+        });
+    </script>
+  </body>
+</html>
